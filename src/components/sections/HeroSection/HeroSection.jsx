@@ -16,8 +16,7 @@ function HeroSection() {
           </h1>
 
           <p className="hero-description">
-            Lorem ipsum dolor sit amet <span className="highlight-green">consectetur adipiscing</span> elit
-            sed do <span className="highlight-white">eiusmod tempor incididunt</span>
+             Streetwear que conecta o <span className="highlight-green">futuro dystopico</span> com a <span className="highlight-white">melhor qualidade do mercado</span>
           </p>
 
           <div className="hero-buttons">
