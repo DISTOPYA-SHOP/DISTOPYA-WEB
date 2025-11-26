@@ -5,12 +5,10 @@ import dystopiaLogo from '../../../assets/images/Logo/Logo.svg';
 const Header = () => {
     return (
         <header className={styles.header}>
-            {/*Container do logo e do menu*/}
             <div className={styles.logoContainer}>
                 <img src={dystopiaLogo} alt="Logo DYSTOPIA" className={styles.logoImage} />
             </div>
 
-            {/*Navegação Principal*/}
             <nav className={styles.nav}>
                 <a href="#streetwear" className={styles.navLink}>Streetwear</a>
                 <a href="#drops" className={styles.navLink}>Limited Drops</a>
@@ -18,7 +16,6 @@ const Header = () => {
                 <a href="lookbook" className={styles.navLink}>Lookbook</a>
             </nav>
 
-            {/*icones de ação*/}
             <div className={styles.actions}>
                 <button className={styles.iconButton}>
                     <Search size={20} />

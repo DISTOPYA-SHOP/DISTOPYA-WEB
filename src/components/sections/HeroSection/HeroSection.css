@@ -1,15 +1,53 @@
 .hero-section {
+  /* --- SEU LAYOUT ORIGINAL (Mantido) --- */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  position: relative;
   overflow: hidden;
+  
+  /* --- AJUSTES NECESSÁRIOS --- */
+  position: relative; 
+  z-index: 1; /* Garante que seus botões/textos fiquem na frente */
+  background-color: #000; /* Fundo preto base */
+}
+
+/* 1. A IMAGEM (Camada mais profunda) */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  
   background-image: url('../../../assets/images/Background.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
+  /* Opacidade apenas da imagem */
+  opacity: 0.6; 
+  
+  z-index: -2; /* Fica atrás de tudo */
+}
+
+/* 2. A MALHA + SOMBRA (Camada do meio) */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; /* Garante que não bloqueie cliques */
+  
+  background-image: 
+    /* Sombra forte na esquerda (texto), clareando para a direita */
+    linear-gradient(to right, rgba(0,0,0, 0.30) 0%, rgba(0,0,0, 0.1) 100%),
+    
+    /* Linhas da Malha */
+    linear-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+    
+  background-size: cover, 40px 40px, 40px 40px;
+  
+  z-index: -1; /* Fica na frente da imagem, mas atrás do texto */
 }
 
 .hero-container {
@@ -46,7 +84,6 @@
 .hero-title-line1 {
   display: block;
   color: #ffffff;
-  -webkit-text-stroke: 2px #000000;
 }
 
 .hero-title-line2 {
@@ -155,7 +192,7 @@
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #000000;
+  color: #999999;
   letter-spacing: 0.05em;
 }
 
