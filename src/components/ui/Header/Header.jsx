@@ -1,14 +1,13 @@
-import React from "react";
 import styles from "./header.module.css";
-import { Search, ShoppingCart } from "lucide-react";
+import { Search, ShoppingCart, User } from "lucide-react";
+import dystopiaLogo from '../../../assets/images/Logo/Logo.svg';
 
 const Header = () => {
     return (
         <header className={styles.header}>
             {/*Container do logo e do menu*/}
             <div className={styles.logoContainer}>
-                <span className={styles.logoText}>DYSTOPIA</span>
-                <span className={styles.logoSubtitle}>2000</span>
+                <img src={dystopiaLogo} alt="Logo DYSTOPIA" className={styles.logoImage} />
             </div>
 
             {/*Navegação Principal*/}
@@ -23,6 +22,9 @@ const Header = () => {
             <div className={styles.actions}>
                 <button className={styles.iconButton}>
                     <Search size={20} />
+                </button>
+                <button className={styles.iconButton}>
+                    <User size={20} />
                 </button>
                 <button className={styles.iconButton}>
                     <ShoppingCart size={20} />

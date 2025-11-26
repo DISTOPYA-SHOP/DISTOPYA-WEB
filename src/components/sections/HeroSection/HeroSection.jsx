@@ -1,44 +1,48 @@
-import React from 'react';
-import styles from './HeroSection.module.css';
+import './HeroSection.css';
+import dystopiaLogo from '../../../assets/images/Logo/Logo.svg';
 
-const HeroSection = () => {
-    return (
-        <section className={styles.hero}>
-            {/* O Background será tratado pelo CSS */}
+function HeroSection() {
+  return (
+    <section className="hero-section">
+      <div className="hero-container">
+        <div className="hero-content">
+          <div className="hero-logo">
+            <img src={dystopiaLogo} alt="DYSTOPIA" />
+          </div>
 
-            <div className={styles.content}>
-                {/* Título Principal em Neon */}
-                <h1 className={styles.title}>FUTURE IS NOW</h1>
+          <h1 className="hero-title">
+            <span className="hero-title-line1">FUTURE</span>
+            <span className="hero-title-line2">IS NOW</span>
+          </h1>
 
-                {/* Descrição */}
-                <p className={styles.description}>
-                    Streetwear que conecta o <span className={styles.neonHighlight}>futuro distópico</span> com
-                    a melhor qualidade do mercado
-                </p>
+          <p className="hero-description">
+            Lorem ipsum dolor sit amet <span className="highlight-green">consectetur adipiscing</span> elit
+            sed do <span className="highlight-white">eiusmod tempor incididunt</span>
+          </p>
 
-                {/* Botões de Ação */}
-                <div className={styles.actions}>
-                    {/* Botão Primário (Roxo Sólido) */}
-                    {/* Usaríamos <Button variant="primary">... se tivéssemos o componente */}
-                    <button className={`${styles.btn} ${styles.btnPrimary}`}>
-                        Compre AGORA
-                    </button>
+          <div className="hero-buttons">
+            <button className="btn btn-primary">Compre AGORA</button>
+            <button className="btn btn-secondary">ENTRAR NA DYSTOPIA</button>
+          </div>
 
-                    {/* Botão Secundário (Borda) */}
-                    <button className={`${styles.btn} ${styles.btnSecondary}`}>
-                        ENTRAR NA DYSTOPIA
-                    </button>
-                </div>
-
-                {/* Barra de Informação Inferior (Drops, Qualidade, Autêntico) */}
-                <div className={styles.infoBar}>
-                    <p><span className={styles.dropPoint}></span> DROPS LIMITADOS</p>
-                    <p><span className={styles.qualityPoint}></span> QUALIDADE PREMIUM</p>
-                    <p><span className={styles.authenticPoint}></span> AUTÊNTICO</p>
-                </div>
+          <div className="hero-features">
+            <div className="feature-item">
+              <span className="feature-dot green"></span>
+              <span className="feature-text">DROPS LIMITADOS</span>
             </div>
-        </section>
-    );
-};
+            <div className="feature-item">
+              <span className="feature-dot purple"></span>
+              <span className="feature-text">QUALIDADE PREMIUM</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-dot red"></span>
+              <span className="feature-text">AUTÊNTICO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default HeroSection;
