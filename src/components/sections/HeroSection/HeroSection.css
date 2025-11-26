@@ -55,7 +55,7 @@
   box-shadow: 0 0 2px #00ff0063, 0 0 5px #00ff0063;
   z-index: 0;
   pointer-events: none;
-  animation: scan-move 4s linear infinite;
+  animation: scan-move 3.5s linear infinite;
 }
 
 @keyframes scan-move {
