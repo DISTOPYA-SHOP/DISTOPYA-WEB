@@ -1,58 +1,94 @@
 .hero-section {
-  /* --- SEU LAYOUT ORIGINAL (Mantido) --- */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 6rem;
+  padding-left: 2rem;
   overflow: hidden;
-  
-  /* --- AJUSTES NECESSÁRIOS --- */
-  position: relative; 
-  z-index: 1; /* Garante que seus botões/textos fiquem na frente */
-  background-color: #000; /* Fundo preto base */
+  position: relative;
+  z-index: 1;
+  background-color: #000;
 }
 
-/* 1. A IMAGEM (Camada mais profunda) */
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   background-image: url('../../../assets/images/Background.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  /* Opacidade apenas da imagem */
-  opacity: 0.6; 
-  
-  z-index: -2; /* Fica atrás de tudo */
+  opacity: 0.6;
+  z-index: -2;
 }
 
-/* 2. A MALHA + SOMBRA (Camada do meio) */
 .hero-section::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none; /* Garante que não bloqueie cliques */
-  
-  background-image: 
-    /* Sombra forte na esquerda (texto), clareando para a direita */
-    linear-gradient(to right, rgba(0,0,0, 0.65) 0%, rgba(0,0,0, 0.1) 35%),
-    
-    /* Linhas da Malha */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 35%),
     linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    
+
   background-size: cover, 40px 40px, 40px 40px;
-  
-  z-index: -1; /* Fica na frente da imagem, mas atrás do texto */
+
+  z-index: -1;
+}
+
+.hero-scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #00ff0020;
+  box-shadow: 0 0 2px #00ff0063, 0 0 5px #00ff0063;
+  z-index: 0;
+  pointer-events: none;
+  animation: scan-move 4s linear infinite;
+}
+
+@keyframes scan-move {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0.5;
+  }
 }
 
 .hero-container {
   max-width: 1200px;
   width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.heroLogo {
+  width: 150px;
+  height: auto;
+  display: block;
 }
 
 .hero-content {
@@ -71,7 +107,8 @@
   width: auto;
 }
 
-.hero-title-line1, .hero-title-line2 {
+.hero-title-line1,
+.hero-title-line2 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 800;
   font-size: clamp(3rem, 5vw, 6rem);
@@ -94,6 +131,7 @@
 .hero-description {
   font-family: 'JetBrains Mono', monospace;
   font-size: clamp(1.3rem, 1.2vw, 1.125rem);
+  font-weight: 900;
   letter-spacing: 0.1rem;
   color: #999999;
   max-width: 600px;
@@ -103,12 +141,12 @@
 
 .hero-description .highlight-green {
   color: rgb(var(--verde-lima-rgb));
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .hero-description .highlight-white {
   color: rgb(var(--roxo-rgb));
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .hero-buttons {

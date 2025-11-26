@@ -36,7 +36,7 @@
     width: 150px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 0 1px #a000ff) drop-shadow(0 0 7px #a000ff);
+    filter: drop-shadow(0 0 0px #a200ff8a) drop-shadow(0 0 0px #a200ff8a);
     transition: transform 0.3s;
     cursor: pointer;
 }

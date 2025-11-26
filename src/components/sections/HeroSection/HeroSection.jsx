@@ -4,6 +4,7 @@ import dystopiaLogo from '../../../assets/images/Logo/Logo.svg';
 function HeroSection() {
   return (
     <section className="hero-section">
+      <div className="hero-scanner-line"></div>
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-logo">
@@ -16,7 +17,7 @@ function HeroSection() {
           </h1>
 
           <p className="hero-description">
-             Streetwear que conecta o <span className="highlight-green">futuro dystopico</span> com a <span className="highlight-white">melhor qualidade do mercado</span>
+            Streetwear que conecta o <span className="highlight-green">futuro dystopico</span> com a <span className="highlight-white">melhor qualidade do mercado</span>
           </p>
 
           <div className="hero-buttons">
